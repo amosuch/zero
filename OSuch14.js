@@ -1,15 +1,19 @@
+
+
+
 class Vehicle{
-    constructor (color, make, direction){
+    constructor (color, make, direction, topSpeed){
         this._color = color;
         this._make = make;
-        this._direction = 0; //0-359, set a getter and setter
+        this._direction = direction; //0-359, set a getter and setter
         this._currentSpeed = 0;
-        this._topSpeed = 180;
+        this._topSpeed = topSpeed;
         this._engineStarted = false;
     }
 
+
     accelerate(){
-        if (this._currentSpeed<=165) {
+        if (this._currentSpeed< this._topSpeed) {
             this._currentSpeed += 15;
             console.log(`The ${this._color} ${this._make} is accelerating, speed is now ${this._currentSpeed} mph.`);
             return this;    
@@ -43,21 +47,34 @@ class Vehicle{
         return this;
     }
 
-    turnLeft(){
-        this._direction += 90;
-        console.log(`The ${this._color} ${this._make} has turned ${this._direction} degrees left.`)
+    turnRight(){
+        if (this._direction <=269) {
+            this._direction += 90;
+        console.log(`The ${this._color} ${this._make} has turned ${this._direction} left.`);
+        return this; //east (90), west (270), north (0), south (180)
+        } else{
+        this._direction = 0;
+        console.log(`The ${this._color} ${this._make} has turned ${this._direction} left.`);
         return this;
+        }
     }
 
-    turnRight(){
+    turnLeft(){
+        if (this._direction >=90){
         this._direction -= 90;
         console.log(`The ${this._color} ${this._make} has turned ${this._direction} degrees right.`)
         return this;
+    } else {
+        this._direction = 0;
+        console.log(`The ${this._color} ${this._make} has turned ${this._direction} left.`);
+        return this;
     }
+}
 }
 
 class Bus extends Vehicle {
-        super(color, make, numberOfSeats, direction){
+    constructor(color, make, direction, topSpeed, numberOfSeats){
+        super(color, make, direction, topSpeed, numberOfSeats);
         this._numberOfSeats = numberOfSeats;
 
     }

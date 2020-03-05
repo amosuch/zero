@@ -5,20 +5,15 @@
 <body>
 <script src = "OSuch14.js"></script>
 <script>
-    let vehicleOne = new Vehicle("Blue", "Civic", 0);
-    let vehicleTwo = new Vehicle("Red", "Elantra", 0);
-    let schoolBus = new Bus ("Yellow", "Bus", "35", 0);
-    let emergencyAmbulance = new Ambulance("White", "Ambulance", 0);
-
-    console.log(vehicleOne);
-    vehicleOne.accelerate().accelerate().brake();
-    emergencyAmbulance.accelerate().accelerate().sirenOn().sirenOff();
-    console.log(vehicleTwo)
-    vehicleTwo.turnOn().accelerate().accelerate().turnLeft().turnLeft();
-    console.log(schoolBus);
-    schoolBus.turnOn().accelerate().accelerate().turnLeft().accelerate().brake().brake().brake().accelerate()
-    .accelerate().accelerate().accelerate().accelerate().accelerate().accelerate().
-    accelerate().accelerate().accelerate().accelerate().accelerate();
+    let vehicleOne = new Vehicle("Blue", "Civic", 0, 180);
+    let vehicleTwo = new Vehicle("Red", "Elantra", 0, 180);
+    let schoolBus = new Bus ("Yellow", "Bus", 0, 120, 30);
+    let emergencyAmbulance = new Ambulance("White", "Ambulance", 170);
+    
+console.log(schoolBus)
+schoolBus.accelerate().turnLeft();
+console.log(vehicleOne);
+console.log(vehicleTwo);
 </script>    
 </body>
 </html>
