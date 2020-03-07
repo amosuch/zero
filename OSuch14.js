@@ -48,29 +48,48 @@ class Vehicle{
     }
 
     turnRight(){
-        if (this._direction <=269) {
+        if (this._direction = 0) {
             this._direction += 90;
-        console.log(`The ${this._color} ${this._make} has turned ${this._direction} left.`);
-        return this; //east (90), west (270), north (0), south (180)
-        } else{
-        this._direction = 0;
-        console.log(`The ${this._color} ${this._make} has turned ${this._direction} left.`);
-        return this;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed East`);
+            return this; 
+        } else if(this._direction = 90){
+            this._direction += 90;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed South`);
+            return this;
+        } else if(this._direction = 180){
+            this._direction +=90;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed West`);
+            return this;
+        } else if(this._direction = 270){
+            this._direction -= 270;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed North`);
+            return this;
         }
+
     }
 
     turnLeft(){
-        if (this._direction >=90){
+        if (this._direction =90){
         this._direction -= 90;
-        console.log(`The ${this._color} ${this._make} has turned ${this._direction} degrees right.`)
+        console.log(`The ${this._color} ${this._make} has turned left and is headed North`);
         return this;
-    } else {
-        this._direction = 0;
-        console.log(`The ${this._color} ${this._make} has turned ${this._direction} left.`);
+        } 
+    else if (this._direction = 0){
+        this_direction += 270;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed West`);
+        return this;
+    }else if (this._direction = 270){
+        this_direction -= 90;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed South`);
+        return this;
+    }else if (this._direction = 180){
+        this_direction -=90;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed East`);
         return this;
     }
+    }
 }
-}
+
 
 class Bus extends Vehicle {
     constructor(color, make, direction, topSpeed, numberOfSeats){
