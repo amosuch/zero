@@ -2,10 +2,10 @@
 
 
 class Vehicle{
-    constructor (color, make, direction, topSpeed){
+    constructor (color, make, directionDegrees, topSpeed){
         this._color = color;
         this._make = make;
-        this._direction = direction; //0-359, set a getter and setter
+        this._directionDegrees = directionDegrees; //0-359, set a getter and setter
         this._currentSpeed = 0;
         this._topSpeed = topSpeed;
         this._engineStarted = false;
@@ -48,43 +48,43 @@ class Vehicle{
     }
 
     turnRight(){
-        if (this._direction = 0) {
-            this._direction += 90;
-            console.log(`The ${this._color} ${this._make} has turned right and is headed East`);
+        if (this._directionDegrees == 0) {
+            this._directionDegrees += 90;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed East.`);
             return this; 
-        } else if(this._direction = 90){
-            this._direction += 90;
-            console.log(`The ${this._color} ${this._make} has turned right and is headed South`);
+        } else if(this._directionDegrees == 90){
+            this._directionDegrees += 90;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed South.`);
             return this;
-        } else if(this._direction = 180){
-            this._direction +=90;
-            console.log(`The ${this._color} ${this._make} has turned right and is headed West`);
+        } else if(this._directionDegrees == 180){
+            this._directionDegrees +=90;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed West.`);
             return this;
-        } else if(this._direction = 270){
-            this._direction -= 270;
-            console.log(`The ${this._color} ${this._make} has turned right and is headed North`);
+        } else if(this._directionDegrees == 270){
+            this._directionDegrees -= 270;
+            console.log(`The ${this._color} ${this._make} has turned right and is headed North.`);
             return this;
         }
 
     }
 
     turnLeft(){
-        if (this._direction =90){
-        this._direction -= 90;
-        console.log(`The ${this._color} ${this._make} has turned left and is headed North`);
+        if (this._directionDegrees == 90){
+        this._directionDegrees -= 90;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed North.`);
         return this;
         } 
-    else if (this._direction = 0){
-        this_direction += 270;
-        console.log(`The ${this._color} ${this._make} has turned left and is headed West`);
+    else if (this._directionDegrees == 0){
+        this._directionDegrees += 270;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed West.`);
         return this;
-    }else if (this._direction = 270){
-        this_direction -= 90;
-        console.log(`The ${this._color} ${this._make} has turned left and is headed South`);
+    }else if (this._directionDegrees == 270){
+        this._directionDegrees -= 90;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed South.`);
         return this;
-    }else if (this._direction = 180){
-        this_direction -=90;
-        console.log(`The ${this._color} ${this._make} has turned left and is headed East`);
+    }else if (this._directionDegrees == 180){
+        this._directionDegrees -=90;
+        console.log(`The ${this._color} ${this._make} has turned left and is headed East.`);
         return this;
     }
     }
@@ -92,16 +92,16 @@ class Vehicle{
 
 
 class Bus extends Vehicle {
-    constructor(color, make, direction, topSpeed, numberOfSeats){
-        super(color, make, direction, topSpeed, numberOfSeats);
+    constructor(color, make, directionDegrees, topSpeed, numberOfSeats){
+        super(color, make, directionDegrees, topSpeed, numberOfSeats);
         this._numberOfSeats = numberOfSeats;
 
     }
 }
 
 class Ambulance extends Vehicle {
-    constructor (color, make, direction){
-        super(color, make, direction);
+    constructor (color, make, directionDegrees, topSpeed){
+        super(color, make, directionDegrees, topSpeed);
         this._siren = false;
     }
     sirenOn(){
